@@ -1,4 +1,4 @@
-def chechout(string giturl, string branch='main'){
+def chechout(String giturl, String branch='master'){
     echo "Checking out branch: ${branch}"
 
     chechout([
