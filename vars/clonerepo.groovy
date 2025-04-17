@@ -1,12 +1,12 @@
-def call(String giturl, String branch){
+// vars/checkout.groovy
+
+def call(String gitUrl, String branch) {
     echo "Checking out branch: ${branch}"
 
-    chechout([
-        $class :'GitSCM',
-        branches: [[name:branch]],
-        userRemoteConfigs:[[url:giturl]]
+    // Correctly call the checkout method
+    checkout([
+        $class: 'GitSCM',
+        branches: [[name: branch]],
+        userRemoteConfigs: [[url: gitUrl]]
     ])
-
-
-
 }
