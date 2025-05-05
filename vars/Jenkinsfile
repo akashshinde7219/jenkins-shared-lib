@@ -1,0 +1,17 @@
+@Library("jenkins-shared-lib") _
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                Hello()
+            }
+        }
+        stage('checkout') {
+            steps {
+                clonerepo('https://github.com/akashshinde7219/jenkins-shared-lib.git','master')
+            }
+        }
+    }
+}

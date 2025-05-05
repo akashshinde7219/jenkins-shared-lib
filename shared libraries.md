@@ -19,5 +19,31 @@ folder structure of shared libraries
 shared libraries is way to store commanly reusable code ,such as scripts or function , that can be used in diff jenkins pipeline
 
 
-syntax use in jnekins to declare lib 
+syntax use in jenkins to declare lib 
 @Library("my-shared-library") _    (_ all files)
+
+
+var   // kepp your groovy files here
+---hello.Groovy
+---checkout.Groovy
+
+
+src // use to store groovy classes and ghelper methods 
+
+resourcec // it is use to store static files like scripts configures files , templetes 
+
+
+
+##################################### Access Restriction ##################################### 
+
+we can give access base on roles, team, or environment.
+below  is example of role based access 
+
+def restrictedFunction() {
+    if (env.USER_ROLE != 'admin') {
+        error "You do not have access to run this function."
+    } else {
+        echo "Running the restricted function"
+        // Logic for the restricted function
+    }
+}
